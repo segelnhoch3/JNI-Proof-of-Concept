@@ -3,18 +3,16 @@ package com.example.basicapp;
 import java.util.*;
 
 class HelloWorld {
+    /*
+    This is the native method declaration that allows other Java classes to call and use the
+    function implemented in Rust. Note that it has the same name as the Rust function. This is
+    necessary to link the two together.
+     */
     static native ArrayList<String> special(ArrayList<Integer> input1, int input2);
-    static String path;
 
     static {
-
-        path = System.getProperty("java.library.path");
-        try{
+        // This call loads the dynamic library containing the Rust code that we generated.
             System.loadLibrary("app");
-        }catch (UnsatisfiedLinkError e){
-            System.out.println("libpath:" + path);
-            throw e;
-        }
     }
 
 }
