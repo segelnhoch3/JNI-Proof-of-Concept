@@ -12,8 +12,9 @@ This library provides a procedural macro to make easier to write JNI-compatible 
 There is a lot of code in this repo, mainly to provide the GUI and basic functions of the app. The interesting files are [lib.rs](/app/src/lib.rs), the file containing the Rust code, [HelloWorld.java](app/src/main/java/com/example/basicapp/HelloWorld.java), the file defining the Functions implemented in Rust on the Java side, as well as the build files like [cargo.toml](app/src/Cargo.toml) and [run.sh](/app/run.sh) / [run.bat](/app/run.bat).
 
 - [lib.rs](/app/src/lib.rs) contains the function implementations in Rust that will be used by Java. It will later be compiled into a dynamic library, from where the functions can be used in Java.
-- [HelloWorld.java](app/src/main/java/com/example/basicapp/HelloWorld.java) is the other half of that interaction, providing the function definitions in Java (with the `native` tag), as well as loading the dynamic library in the first place. Its function gets called by [Testing.java](app/src/main/java/com/example/basicapp/Testing.java) when the button is pressed.
-- [cargo.toml](app/src/Cargo.toml) has been modified so that the Rust code actually gets compiled as a dynamic library, with the line `crate-type = ["cdylib"]`. It also has Robusta marked as a dependency
+- [HelloWorld.java](app/src/main/java/com/example/basicapp/HelloWorld.java) is the other half of that interaction, providing the function definitions in Java (with the `native` tag), as well as loading the dynamic library in the first place.
+- [FirstFragment.java](app/src/main/java/com/example/basicapp/FirstFragment.java) calls the native function when the button in the GUI is pressed.
+- [cargo.toml](app/src/Cargo.toml) has been modified so that the Rust code actually gets compiled as a dynamic library, with the line `crate-type = ["cdylib"]`. It also has Robusta marked as a dependency.
 - The [run.sh](/app/run.sh) / [run.bat](/app/run.bat) files are the ones that are executed in order to build and install the app. They first use cargo to compile the Rust code, and then compile and build the Android app. 
 
 ## Guide
