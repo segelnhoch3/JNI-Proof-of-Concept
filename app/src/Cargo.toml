@@ -1,0 +1,15 @@
+[package]
+name = "app"
+version = "0.2.2"
+authors = ["Elise Chouleur"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+path = "./lib.rs"
+
+[dependencies]
+robusta_jni = "0.2"
+jni = "^0.20"
+android_logger = "^0"
+log = "^0"
