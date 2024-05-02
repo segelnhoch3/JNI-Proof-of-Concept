@@ -54,7 +54,7 @@ public class FirstFragment extends Fragment {
             // Here, the Rust-function gets called and gets an ArrayList and an int passed along.
             // The Rust function will add the int to the ArrayList
             // (Which is a Vec<i32> in Rust in this case) and return it.
-            ArrayList<String> output = HelloWorld.special(in, 4);
+            ArrayList<String> output = HelloWorld.special(in, 5);
 
             display = "Success! Return value: " + output;
         }catch (Error e){

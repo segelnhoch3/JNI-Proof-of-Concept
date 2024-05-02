@@ -14,7 +14,7 @@ cd src || exit
 echo
 echo building rust
 echo
-cargo ndk -t armeabi-v7a -t arm64-v8a -o ../main/jniLibs build || exit
+cargo ndk -t armeabi-v7a -t arm64-v8a -o ./main/jniLibs build || exit
 cd ..
 
 cd ..
